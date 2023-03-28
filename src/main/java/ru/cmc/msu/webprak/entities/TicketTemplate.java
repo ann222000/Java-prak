@@ -2,7 +2,7 @@ package ru.cmc.msu.webprak.entities;
 
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 import java.sql.Date;
 import java.util.Objects;
 
@@ -23,12 +23,11 @@ public class TicketTemplate implements CommonEntity<Long> {
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="bus_line", referencedColumnName="id")
-    @ToString.Exclude // TODO check this
+    @ToString.Exclude
     @NonNull
     private BusLine bus_line;
 
     @Column(nullable = false, name = "date_departure")
-    @NonNull
     private Date date_departure;
 
     @Column(name = "price")

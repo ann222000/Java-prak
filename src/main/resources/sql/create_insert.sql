@@ -1,11 +1,11 @@
 DROP TYPE IF EXISTS station_type CASCADE;
-CREATE TYPE station_type AS enum('final', 'start', 'common');
+-- CREATE TYPE station_type AS enum('final', 'start', 'common');
 
 DROP TABLE IF EXISTS person CASCADE;
 CREATE TABLE person(
     id SERIAL PRIMARY KEY,
-    name text NOT NULL,
     surname text NOT NULL,
+    name text NOT NULL,
     fathers_name text NOT NULL,
     telephone_number text,
     email text,
@@ -23,7 +23,7 @@ DROP TABLE IF EXISTS ticket_template CASCADE;
 CREATE TABLE ticket_template (
     id SERIAL PRIMARY KEY,
     bus_line integer NOT NULL REFERENCES bus_line(id) ON DELETE CASCADE,
-    date_departure date NOT NULL,
+    date_departure date,
     price float CHECK (price > 0),
     from_station text NOT NULL,
     to_station text NOT NULL
@@ -44,7 +44,7 @@ CREATE TABLE station_and_bus_line (
     station_name text,
     time_in time,
     time_out time,
-    type station_type,
+    type int,
     day integer NOT NULL CHECK (day > 0),
     PRIMARY KEY(bus_line, station_name)
 );
@@ -88,3 +88,16 @@ VALUES
     (2, 'Salarievo','10:30',NULL,'final', 2),
     (4, 'Tuapse','19:20', '19:30','common', 2);
 
+
+-- ALTER USER anna PASSWORD 'admin';
+
+
+-- SET ROLE postgres;
+-- GRANT USAGE ON SCHEMA public to anna;
+-- grant all on database postgres to anna;
+-- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO anna;
+--
+-- SET ROLE anna;
+-- SELECT * from person;
+--
+-- ALTER USER anna with SUPERUSER;

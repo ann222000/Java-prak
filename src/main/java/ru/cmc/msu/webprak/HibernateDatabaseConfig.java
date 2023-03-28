@@ -22,15 +22,15 @@ public class HibernateDatabaseConfig {
     @Value("${password}")
     private String DB_PASSWORD;
 
-    @Bean
+    @Bean(name="entityManagerFactory")
     public LocalSessionFactoryBean sessionFactory() {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(oraDataSource());
-        sessionFactory.setPackagesToScan("ru.msu.cmc.webprak.models");
+        sessionFactory.setPackagesToScan("ru.cmc.msu.webprak.entities");
 
         Properties hibernateProperties = new Properties();
         hibernateProperties.setProperty("hibernate.hbm2ddl.auto", "update");
-        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQL10Dialect");
+        hibernateProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         hibernateProperties.setProperty("connection_pool_size", "1");
 
         sessionFactory.setHibernateProperties(hibernateProperties);
@@ -44,7 +44,6 @@ public class HibernateDatabaseConfig {
 
         dataSource.setDriverClassName(DB_DRIVER);
         dataSource.setUrl(DB_URL);
-        DB_USERNAME = "postgres";
         dataSource.setUsername(DB_USERNAME);
         dataSource.setPassword(DB_PASSWORD);
 

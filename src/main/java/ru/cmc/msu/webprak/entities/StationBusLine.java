@@ -2,7 +2,8 @@ package ru.cmc.msu.webprak.entities;
 
 import lombok.*;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
+
 import java.sql.Time;
 import java.util.Objects;
 
@@ -37,10 +38,10 @@ public class StationBusLine implements CommonEntity<String> {
     @Column(nullable = false, name = "station_name")
     private String station_name;
 
-    @Column(nullable = false, name = "time_in")
+    @Column(name = "time_in")
     private Time time_in;
 
-    @Column(nullable = false, name = "time_out")
+    @Column(name = "time_out")
     private Time time_out;
 
     @Column(nullable = false, name = "type")

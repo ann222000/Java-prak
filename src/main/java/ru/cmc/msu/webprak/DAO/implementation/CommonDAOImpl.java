@@ -9,10 +9,10 @@ import org.springframework.stereotype.Repository;
 import ru.cmc.msu.webprak.DAO.CommonDAO;
 import ru.cmc.msu.webprak.entities.CommonEntity;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
-import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
+import jakarta.persistence.criteria.CriteriaBuilder;
+import jakarta.persistence.criteria.CriteriaQuery;
+import jakarta.persistence.criteria.Predicate;
+import jakarta.persistence.criteria.Root;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
@@ -20,7 +20,6 @@ import java.util.Map;
 
 @Repository
 public abstract class CommonDAOImpl<T extends CommonEntity<ID>, ID extends Serializable> implements CommonDAO<T, ID> {
-
     protected SessionFactory sessionFactory;
 
     protected Class<T> persistentClass;
@@ -57,7 +56,7 @@ public abstract class CommonDAOImpl<T extends CommonEntity<ID>, ID extends Seria
                 entity.setId(null);
             }
             session.beginTransaction();
-            session.saveOrUpdate(entity);
+            session.merge(entity);
             session.getTransaction().commit();
         }
     }
@@ -93,7 +92,7 @@ public abstract class CommonDAOImpl<T extends CommonEntity<ID>, ID extends Seria
     public void update(T entity) {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            session.update(entity);
+            session.merge(entity);
             session.getTransaction().commit();
         }
     }
@@ -102,7 +101,7 @@ public abstract class CommonDAOImpl<T extends CommonEntity<ID>, ID extends Seria
     public void delete(T entity) {
         try (Session session = sessionFactory.openSession()) {
             session.beginTransaction();
-            session.delete(entity);
+            session.remove(entity);
             session.getTransaction().commit();
         }
     }
