@@ -82,11 +82,11 @@ VALUES
 
 INSERT INTO station_and_bus_line
 VALUES
-    (1, 'Serpuhov','20:25', '20:30','common', 1),
-    (3, 'Anapa','09:34', NULL,'final', 2),
-    (1, 'Rostov-Main','14:40', NULL,'final', 2),
-    (2, 'Salarievo','10:30',NULL,'final', 2),
-    (4, 'Tuapse','19:20', '19:30','common', 2);
+    (1, 'Serpuhov','20:25', '20:30', 3, 1),
+    (3, 'Anapa','09:34', NULL, 1, 2),
+    (1, 'Rostov-Main','14:40', NULL, 1, 2),
+    (2, 'Salarievo','10:30',NULL, 1, 2),
+    (4, 'Tuapse','19:20', '19:30', 3, 2);
 
 
 -- ALTER USER anna PASSWORD 'admin';

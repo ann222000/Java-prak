@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.0.3'
+	id 'org.springframework.boot' version '3.0.5'
 	id 'io.spring.dependency-management' version '1.1.0'
 }
 
@@ -31,10 +31,23 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.projectlombok:lombok:1.18.22'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	implementation 'org.springframework:spring-webmvc:6.0.7'
+	implementation 'org.apache.logging.log4j:log4j-core:2.20.0'
+
+	implementation 'org.thymeleaf:thymeleaf-spring6:3.1.1.RELEASE'
+	implementation 'org.seleniumhq.selenium:selenium-java'
+	implementation 'org.testng:testng:7.7.0'
+
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'org.postgresql:postgresql'
 	annotationProcessor 'org.projectlombok:lombok'
-	implementation 'org.springframework.boot:spring-boot-starter-test'
+	annotationProcessor "org.springframework.boot:spring-boot-configuration-processor" // ??
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.hibernate:hibernate-core:6.1.7.Final'
+	testImplementation 'org.postgresql:postgresql:42.6.0'
 }
 
 tasks.named('test') {
