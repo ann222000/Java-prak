@@ -3,6 +3,8 @@ package ru.cmc.msu.webprak.entities;
 import lombok.*;
 
 import jakarta.persistence.*;
+
+import java.io.Serial;
 import java.util.Objects;
 
 @Entity
@@ -19,11 +21,11 @@ public class BusLine implements CommonEntity<Long> {
     @Column(nullable = false, name = "id")
     private Long id;
 
-    @Column(nullable = false, name = "company")
+    @Column(nullable = true, name = "company")
     @NonNull
     private String company;
 
-    @Column(nullable = false, name = "number_of_places")
+    @Column(nullable = true, name = "number_of_places")
     @NonNull
     private Integer number_of_places;
 

@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        .indent {
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Информация о человеке</title>
+</head>
+
+<body>
+
+<div th:replace="general :: site-footer"></div>
+<div th:replace="general :: page-header"> </div>
+<div th:replace="general :: site-script"></div>
+
+<div class="indent">
+    <div id="personInfo">
+        <h4>Подробная информация о клиенте</h4>
+        <p th:if="${person.getName() != null}" th:text="'Имя: ' + ${person.getName()}"></p>
+        <p th:if="${person.getSurname() != null}" th:text="'Фамилия: ' + ${person.getSurname()}"></p>
+        <p th:if="${person.getFathers_name() != null}" th:text="'Отчечтво: ' + ${person.getFathers_name()}"></p>
+        <p th:if="${person.getTelephone_number() != null}" th:text="'Номер телефона: ' + ${person.getTelephone_number()}"></p>
+        <p th:if="${person.getEmail() != null}" th:text="'Электронная почта: ' + ${person.getEmail()}"></p>
+        <p th:if="${person.getAddress() != null}" th:text="'Адрес: ' + ${person.getAddress()}"></p>
+    </div>
+
+    <!--edit delete button group-->
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+            <form style="margin-right: 30px" method="get" action="/editPerson">
+                <input type="hidden" name="personId" th:value="${person.getId()}"/>
+                <button id="editButton" type="submit" class="btn btn-dark">Редактировать информацию о клиенте</button>
+            </form>
+            <form method="post" action="/removePerson">
+                <input type="hidden" name="personId" th:value="${person.getId()}"/>
+                <button id="deleteButton" type="submit" class="btn btn-danger">Удалить клиента из базы</button>
+            </form>
+        </div>
+    </div>
+    <!--end of button group-->
+    <form method="get" action="/addTicket">
+        <input type="hidden" name="PersonId" th:value="${person.getId()}"/>
+        <button id="addTicketButton" type="submit" class="btn btn-primary">Добавить билет клиенту</button>
+    </form>
+
+    <table class="table table-bordered table-warning">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Место</th>
+            <th scope="col">Станция отправления</th>
+            <th scope="col">Станция прибытия</th>
+            <th scope="col">Дата</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${tickets == null || tickets.isEmpty()}">
+            <td colspan="6">There are no tickets for this client.</td>
+        </tr>
+        <tr th:each="ticket : ${tickets}">
+            <td>
+                <span th:text="${ticket.getId()}"> </span>
+            </td>
+            <td>
+                <span th:text="${ticket.getPlace()}"> </span>
+            </td>
+            <td>
+                <span th:text="${ticket.getId_template().getFrom_station()}"> </span>
+            </td>
+            <td>
+                <span th:text="${ticket.getId_template().getTo_station()}"> </span>
+            </td>
+            <td>
+                <span th:text="${ticket.getId_template().getDate_departure()}"> </span>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

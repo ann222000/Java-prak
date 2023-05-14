@@ -1,8 +1,6 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-
-    <title>Главная страница</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -13,23 +11,16 @@
             margin-top: 20px;
         }
     </style>
+    <title>Готово</title>
 </head>
+
 <body>
 
-
-<div th:replace="general :: site-footer"></div>
 <div th:replace="general :: page-header"> </div>
 <div th:replace="general :: site-script"></div>
 
-
-
-<div class="indent">
-    <h3 class="text-center">Система информации об автобусных рейсах и билетах</h3>
-    <br>
-    <span class="text-center indent"> Сайт позволяет добавлять, редактировать, удалять и получать структурированное представление информации об автобусных рейсах </span>
-    <br>
+<div>
+    <p th:text="'Билет оформлен. Место: ' + ${place} + '. Цена: ' + ${price}"></p>
 </div>
-
-
 </body>
 </html>

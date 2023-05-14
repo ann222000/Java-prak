@@ -19,7 +19,7 @@
 <div th:replace="general :: site-script"></div>
 
 <div class="indent">
-    <form method="get" action="/addperson">
+    <form method="get" action="/editPerson">
         <button id="addPersonButton" type="submit" class="btn btn-primary">Добавить клиента</button>
     </form>
     <br>
@@ -60,6 +60,7 @@
             <th scope="col">Фамилия</th>
             <th scope="col">Имя</th>
             <th scope="col">Отчество</th>
+            <th scope="col">Полная информация</th>
         </tr>
         </thead>
         <tbody>
@@ -78,6 +79,12 @@
             </td>
             <td>
                 <span th:text="${pers.getFathers_name()}"> </span>
+            </td>
+            <td>
+                <form style="margin-right: 30px" method="get" action="/person">
+                    <input type="hidden" name="personId" th:value="${pers.getId()}"/>
+                    <button id="PersonInfoButton" type="submit" class="btn btn-info"> Инфо </button>
+                </form>
             </td>
         </tr>
         </tbody>

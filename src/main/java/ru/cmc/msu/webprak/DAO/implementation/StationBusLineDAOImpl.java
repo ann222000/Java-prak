@@ -1,13 +1,8 @@
 package ru.cmc.msu.webprak.DAO.implementation;
 
-import jakarta.persistence.criteria.CriteriaBuilder;
-import jakarta.persistence.criteria.CriteriaQuery;
-import jakarta.persistence.criteria.Predicate;
-import jakarta.persistence.criteria.Root;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.stereotype.Repository;
-import ru.cmc.msu.webprak.DAO.CommonDAO;
 import ru.cmc.msu.webprak.DAO.StationBusLineDAO;
 import ru.cmc.msu.webprak.entities.BusLine;
 import ru.cmc.msu.webprak.entities.StationBusLine;
@@ -22,11 +17,21 @@ public class StationBusLineDAOImpl extends CommonDAOImpl<StationBusLine, String>
         super(StationBusLine.class);
     }
 
+
+    @Override
+    public List<StationBusLine> getByBusLine(BusLine obj) {
+        try (Session session = sessionFactory.openSession()) {
+            Query<StationBusLine> query = session.createQuery("FROM StationBusLine WHERE bus_line.id = :bus_line_param order by type asc", StationBusLine.class)
+                    .setParameter("bus_line_param", obj.getId());
+            return query.getResultList();
+        }
+    }
+
     @Override
     public List<String> getBusLineStaions(BusLine obj) {
         try (Session session = sessionFactory.openSession()) {
-            Query<StationBusLine> query = session.createQuery("FROM StationBusLine WHERE bus_line = :bus_line_param", StationBusLine.class)
-                    .setParameter("bus_line_param", obj);
+            Query<StationBusLine> query = session.createQuery("FROM StationBusLine WHERE bus_line.id = :bus_line_param order by type asc", StationBusLine.class)
+                    .setParameter("bus_line_param", obj.getId());
             List<StationBusLine> res = query.getResultList();
             List<String> res_string = new ArrayList<>();
             for (StationBusLine re : res) {

@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static ru.cmc.msu.webprak.entities.StationBusLine.Station_type.*;
 
 @SpringBootTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
@@ -50,13 +49,13 @@ public class StationBusLineDAOTest {
         buslineList.add(new BusLine(3L, "Iria", 30));
         busLineDAO.saveCollection(buslineList);
         List<StationBusLine> stationbuslineList = new ArrayList<>();
-        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Anapa", null, null, START, 1));
-        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Rostov-on-Don", null, null, COMMON, 1));
-        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Voronezh", null, null, COMMON, 1));
-        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Moscow", null, null, COMMON, 2));
-        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Vologda", null, null, FINAL, 2));
-        stationbuslineList.add(new StationBusLine(busLineDAO.getById(2L), "Moscow", null, null, START, 1));
-        stationbuslineList.add(new StationBusLine(busLineDAO.getById(2L), "Vologda", null, null, FINAL, 1));
+        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Anapa", null, null, 0, 1));
+        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Rostov-on-Don", null, null, 1, 1));
+        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Voronezh", null, null, 2, 1));
+        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Moscow", null, null, 3, 2));
+        stationbuslineList.add(new StationBusLine(busLineDAO.getById(1L), "Vologda", null, null, 4, 2));
+        stationbuslineList.add(new StationBusLine(busLineDAO.getById(2L), "Moscow", null, null, 0, 1));
+        stationbuslineList.add(new StationBusLine(busLineDAO.getById(2L), "Vologda", null, null, 3, 1));
         stationBusLineDAO.saveCollection(stationbuslineList);
     }
 

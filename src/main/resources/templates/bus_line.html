@@ -1,0 +1,111 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        .indent {
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Информация о рейсе</title>
+</head>
+
+<body>
+
+<div th:replace="general :: site-footer"></div>
+<div th:replace="general :: page-header"> </div>
+<div th:replace="general :: site-script"></div>
+
+<div class="indent">
+    <div id="BusLineInfo">
+        <h3>Подробная информация о рейсе</h3>
+        <p  th:text="'Номер  рейса: ' + ${busline.getId()}"></p>
+        <p th:if="${busline.getCompany() != null}" th:text="'Компания: ' + ${busline.getCompany()}"></p>
+        <p th:if="${busline.getNumber_of_places() != null}" th:text="'Количество мест: ' + ${busline.getNumber_of_places()}"></p>
+        <p th:if="${dates}" th:text="'Доступные даты отправления: ' + ${dates}"></p>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+                <form method="get" action="/addStation">
+                    <input type="hidden" name="BuslineId" th:value="${busline.getId()}"/>
+                    <button id="addStationButton" type="submit" class="btn btn-primary">Добавить станцию в этом рейсе</button>
+                </form>
+                <form method="get" action="/addPrice">
+                    <input type="hidden" name="BuslineId" th:value="${busline.getId()}"/>
+                    <button id="addPricesButton" type="submit" class="btn btn-primary">Добавить цены на определенные даты</button>
+                </form>
+            </div>
+        </div>
+<!--        <form method="get" action="/addStation">-->
+<!--            <input type="hidden" name="BuslineId" th:value="${busline.getId()}"/>-->
+<!--            <button id="addStationButton" type="submit" class="btn btn-primary">Добавить станцию в этом рейсе</button>-->
+<!--        </form>-->
+<!--        <form method="get" action="/addPrice">-->
+<!--            <input type="hidden" name="BuslineId" th:value="${busline.getId()}"/>-->
+<!--            <button id="addPricesButton" type="submit" class="btn btn-primary">Добавить цены на определенные даты</button>-->
+<!--        </form>-->
+        <h4>Станции</h4>
+        <table class="table table-bordered table-warning">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Название станции</th>
+                <th scope="col">Время прибытия</th>
+                <th scope="col">Время отправления</th>
+                <th scope="col">День</th>
+                <th scope="col">Удалить</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:if="${stationbuslineDAO.getByBusLine(busline).isEmpty()}">
+                <td colspan="6">There are no stations for this bus line in database. Please, add a new one! </td>
+            </tr>
+            <tr th:each="station : ${stationbuslineDAO.getByBusLine(busline)}">
+                <td>
+                    <span th:text="${station.getStation_name()}"> </span>
+                </td>
+                <td>
+                    <span th:text="${station.getTime_in()}"> </span>
+                </td>
+                <td>
+                    <span th:text="${station.getTime_out()}"> </span>
+                </td>
+                <td>
+                    <span th:text="${station.getDay()}"> </span>
+                </td>
+                <td>
+                    <form method="post" action="/removeStation">
+                        <input type="hidden" name="Station" th:value="${station.getStation_name()}"/>
+                        <input type="hidden" name="Busline" th:value="${busline.getId()}"/>
+                        <button id="deleteButtonStation" type="submit" class="btn btn-danger">Удалить</button>
+                    </form>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!--edit delete button group-->
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+        <div class="btn-group mr-2" role="group" aria-label="First group">
+            <form style="margin-right: 30px" method="get" action="/editBusline">
+                <input type="hidden" name="BuslineId" th:value="${busline.getId()}"/>
+                <button id="editButton" type="submit" class="btn btn-dark">Редактировать информацию о рейсе</button>
+            </form>
+            <form method="post" action="/removeBusline">
+                <input type="hidden" name="BuslineId" th:value="${busline.getId()}"/>
+                <button id="deleteButton" type="submit" class="btn btn-danger">Удалить рейс из базы</button>
+            </form>
+        </div>
+    </div>
+
+    <form method="get" action="/addTicket">
+        <input type="hidden" name="BuslineId" th:value="${busline.getId()}"/>
+        <button id="addTicketButton" type="submit" class="btn btn-primary">Добавить билет на этот рейс</button>
+    </form>
+    <!--end of button group-->
+</div>
+</body>
+</html>

@@ -1,5 +1,4 @@
 DROP TYPE IF EXISTS station_type CASCADE;
--- CREATE TYPE station_type AS enum('final', 'start', 'common');
 
 DROP TABLE IF EXISTS person CASCADE;
 CREATE TABLE person(
@@ -12,6 +11,7 @@ CREATE TABLE person(
     address text
 );
 
+-- ALTER SEQUENCE bus_line_id_seq RESTART WITH 1;
 DROP TABLE IF EXISTS bus_line CASCADE;
 CREATE TABLE bus_line (
                           id SERIAL PRIMARY KEY,
@@ -48,6 +48,7 @@ CREATE TABLE station_and_bus_line (
     day integer NOT NULL CHECK (day > 0),
     PRIMARY KEY(bus_line, station_name)
 );
+-- type is number of this station from start from 0
 
 INSERT INTO person
 VALUES
@@ -82,17 +83,14 @@ VALUES
 
 INSERT INTO station_and_bus_line
 VALUES
-    (1, 'Serpuhov','20:25', '20:30', 3, 1),
-    (3, 'Anapa','09:34', NULL, 1, 2),
-    (1, 'Rostov-Main','14:40', NULL, 1, 2),
+    (1, 'Serpuhov','20:25', '20:30', 2, 1),
+    (3, 'Anapa','09:34', NULL, 0, 2),
+    (1, 'Rostov-Main','14:40', NULL, 0, 2),
     (2, 'Salarievo','10:30',NULL, 1, 2),
-    (4, 'Tuapse','19:20', '19:30', 3, 2);
+    (4, 'Tuapse','19:20', '19:30', 2, 2);
 
 
--- ALTER USER anna PASSWORD 'admin';
-
-
--- SET ROLE postgres;
+-- SET ROLE postgres; password admin
 -- GRANT USAGE ON SCHEMA public to anna;
 -- grant all on database postgres to anna;
 -- GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO anna;
@@ -101,3 +99,9 @@ VALUES
 -- SELECT * from person;
 --
 -- ALTER USER anna with SUPERUSER;
+-- SELECT * FROM public.StationBusLine WHERE bus_line = :bus_line_param
+ALTER SEQUENCE bus_line_id_seq RESTART WITH 5;
+ALTER SEQUENCE ticket_template_id_seq RESTART WITH 6;
+ALTER SEQUENCE ticket_id_seq RESTART WITH 6;
+ALTER SEQUENCE person_id_seq RESTART WITH 6;
+

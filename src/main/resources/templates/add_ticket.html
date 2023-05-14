@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        .indent {
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Добавление билета</title>
+</head>
+
+<body>
+
+<div th:replace="general :: page-header"> </div>
+<div th:replace="general :: site-script"></div>
+
+<div class="indent">
+    <h3>Добавить билет</h3>
+    <form method="post" name="form" action="/saveTicket">
+        <div th:if="${buslineId != null}">
+            <p th:text="'Id рейса: ' + ${buslineId}"></p>
+            <input type="hidden" id="id1" name="buslineid" th:value = "${buslineId}">
+        </div>
+        <div th:if="${buslineId == null}">
+            <label for="buslineid"> Id рейса</label>
+            <input type="number" id="buslineid" name="buslineid" required class="form-control">
+        </div>
+
+        <div th:if="${personId != null}">
+            <p th:text="'Id клиента: ' + ${personId}"></p>
+            <input type="hidden" id="id2" name="personid" th:value = "${buslineId}">
+        </div>
+        <div th:if="${personId == null}">
+            <label for="personid"> Id клиента</label>
+            <input type="number" id="personid" name="personid" required class="form-control">
+        </div>
+
+        <label for="station_from">Название станции отправления:</label>
+        <input type="text" id="station_from" name="station_from" required class="form-control"><br><br>
+
+        <label for="station_to">Название станции прибытия:</label>
+        <input type="text" id="station_to" name="station_to" required class="form-control"><br><br>
+
+        <label for="date">Дата отправления: </label>
+        <input type="date" id="date" name="date" required class="form-control"><br><br>
+
+        <input id="submitButton" type="submit" value="Сохранить" class="btn btn-primary">
+    </form>
+</div>
+</body>
+</html>

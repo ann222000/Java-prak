@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        .indent {
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 20px;
+        }
+    </style>
+    <title>Редактирование информации о человеке</title>
+</head>
+
+<body>
+
+<div th:replace="general :: page-header"> </div>
+<div th:replace="general :: site-script"></div>
+
+<div class="indent">
+    <h3>Создать нового клиента или изменить данные существующего</h3>
+    <div id="personId">
+        <h6>Информация о клиенте, которая не меняется заполнится автоматически</h6>
+    </div>
+    <form method="post" name="form" action="/savePerson">
+        <p th:if="${person.getId() != null}" th:text="'Id клиента: ' + ${person.getId()}"></p>
+        <input type="hidden" id="id" name="id" th:value = "${person.getId()}">
+
+        <p th:if="${person.getName() != null}" th:text="'Имя клиента: ' + ${person.getName()}"></p>
+        <label for="name">Новое имя</label>
+        <input type="text" id="name" name="name" class="form-control"><br><br>
+
+        <p th:if="${person.getSurname() != null}" th:text="'Фамилия клиента: ' + ${person.getSurname()}"></p>
+        <label for="surname">Новая фамилия:</label>
+        <input type="text" id="surname" name="surname" class="form-control"><br><br>
+
+        <p th:if="${person.getFathers_name() != null}" th:text="'Отчество клиента: ' + ${person.getFathers_name()}"></p>
+        <label for="fathers_name">Новое отчество:</label>
+        <input type="text" id="fathers_name" name="fathers_name"  class="form-control"><br><br>
+
+        <p th:if="${person.getTelephone_number() != null}" th:text="'Номер телефона клиента: ' + ${person.getTelephone_number()}"></p>
+        <label for="telephone_number">Новый номер телефона:</label>
+        <input type="text" id="telephone_number" name="telephone_number"  class="form-control"><br><br>
+
+        <p th:if="${person.getEmail() != null}" th:text="'Почта клиента: ' + ${person.getEmail()}"></p>
+        <label for="email">Новая почта клиента:</label>
+        <input type="text" id="email" name="email"  class="form-control"><br><br>
+
+        <p th:if="${person.getAddress() != null}" th:text="'Адрес клиента: ' + ${person.getAddress()}"></p>
+        <label for="address">Новый адрес клиента:</label>
+        <input type="text" id="address" name="address"  class="form-control"><br><br>
+
+        <input id="submitButton" type="submit" value="Сохранить" class="btn btn-primary">
+    </form>
+</div>
+</body>
+</html>

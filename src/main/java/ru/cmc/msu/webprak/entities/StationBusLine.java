@@ -26,7 +26,6 @@ public class StationBusLine implements CommonEntity<String> {
         station_name = name;
     }
 
-    public enum Station_type {FINAL,START, COMMON}
     @Id
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="bus_line", referencedColumnName="id")
@@ -36,6 +35,7 @@ public class StationBusLine implements CommonEntity<String> {
 
     @Id
     @Column(nullable = false, name = "station_name")
+    @NonNull
     private String station_name;
 
     @Column(name = "time_in")
@@ -45,9 +45,11 @@ public class StationBusLine implements CommonEntity<String> {
     private Time time_out;
 
     @Column(nullable = false, name = "type")
-    private Station_type type;
+    @NonNull
+    private Integer type;
 
     @Column(nullable = false, name = "day")
+    @NonNull
     private Integer day;
 
     @Override

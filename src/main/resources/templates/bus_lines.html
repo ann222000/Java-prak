@@ -1,0 +1,82 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <title>Рейсы</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+        .indent {
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div th:replace="general :: site-footer"></div>
+<div th:replace="general :: page-header"> </div>
+<div th:replace="general :: site-script"></div>
+<div class="indent">
+    <form method="get" action="/editBusline">
+        <button id="addBuslineButton" type="submit" class="btn btn-primary">Добавить рейс</button>
+    </form>
+    <br>
+    <form method="get" action="/searchbusline">
+        <div class="form-row">
+            <div class="col">
+                <input type="number" class="form-control" placeholder="ID" name="id">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="From" name="from">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" placeholder="To" name="to">
+            </div>
+            <div class="col">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+    <br>
+
+    <table class="table table-bordered table-warning">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Компания</th>
+            <th scope="col">Начальная</th>
+            <th scope="col">Конечная</th>
+            <th scope="col">Полная информация</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${buslines == null || buslines.isEmpty()}">
+            <td colspan="6">There are no bus lines in database. Please, add a new bus line! </td>
+        </tr>
+        <tr th:each="bline : ${buslines}">
+            <td>
+                <span th:text="${bline.getId()}"> </span>
+            </td>
+            <td>
+                <span th:if="${bline.getCompany() != null}" th:text="${bline.getCompany()}"> </span>
+            </td>
+            <td>
+                <span th:if="${!stationbuslineDAO.getBusLineStaions(bline).isEmpty()}" th:text="${stationbuslineDAO.getBusLineStaions(bline).get(0)}"> </span>
+            </td>
+            <td>
+                <span th:if="${!stationbuslineDAO.getBusLineStaions(bline).isEmpty()}" th:text="${stationbuslineDAO.getBusLineStaions(bline).get(stationbuslineDAO.getBusLineStaions(bline).size() - 1)}"> </span>
+            </td>
+            <td>
+                <form style="margin-right: 30px" method="get" action="/bus_line">
+                    <input type="hidden" name="buslineId" th:value="${bline.getId()}"/>
+                    <button id="BusLineInfoButton" type="submit" class="btn btn-info"> Инфо </button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

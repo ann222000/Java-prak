@@ -31,7 +31,7 @@ public class TicketTemplate implements CommonEntity<Long> {
     private Date date_departure;
 
     @Column(name = "price")
-    private Integer price;
+    private Long price;
 
     @Column(nullable = false, name = "from_station")
     @NonNull
