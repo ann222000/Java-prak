@@ -25,7 +25,7 @@
         <h4>Подробная информация о клиенте</h4>
         <p th:if="${person.getName() != null}" th:text="'Имя: ' + ${person.getName()}"></p>
         <p th:if="${person.getSurname() != null}" th:text="'Фамилия: ' + ${person.getSurname()}"></p>
-        <p th:if="${person.getFathers_name() != null}" th:text="'Отчечтво: ' + ${person.getFathers_name()}"></p>
+        <p th:if="${person.getFathers_name() != null}" th:text="'Отчество: ' + ${person.getFathers_name()}"></p>
         <p th:if="${person.getTelephone_number() != null}" th:text="'Номер телефона: ' + ${person.getTelephone_number()}"></p>
         <p th:if="${person.getEmail() != null}" th:text="'Электронная почта: ' + ${person.getEmail()}"></p>
         <p th:if="${person.getAddress() != null}" th:text="'Адрес: ' + ${person.getAddress()}"></p>

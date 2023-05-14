@@ -64,6 +64,10 @@ public class Controllers {
                                @RequestParam(required = false) String surname,
                                @RequestParam(required = false) String name,
                                @RequestParam(required = false) String fathers_name,
+                               @RequestParam(required = false) String telephone_number,
+                               @RequestParam(required = false) String email,
+                               @RequestParam(required = false) String address,
+
                                Model model) {
         Map<String, String> findmap = new HashMap<>();
         if (id != null)
@@ -74,6 +78,12 @@ public class Controllers {
             findmap.put("surname", surname);
         if (fathers_name != null && !fathers_name.isEmpty())
             findmap.put("fathers_name", fathers_name);
+        if (telephone_number != null && !telephone_number.isEmpty())
+            findmap.put("telephone_number", telephone_number);
+        if (email != null && !email.isEmpty())
+            findmap.put("email", email);
+        if (address != null && !address.isEmpty())
+            findmap.put("address", address);
         List<Person> persons = personDAO.searchByFilter(findmap);
         model.addAttribute("person", persons);
         model.addAttribute("personDAO", personDAO);

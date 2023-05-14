@@ -1,0 +1,914 @@
+{
+  "id": "71e40d06-527b-4bdd-8da3-d3e6755ab5b4",
+  "version": "2.0",
+  "name": "prak2",
+  "url": "http://localhost:8080",
+  "tests": [{
+    "id": "deaa45ba-74b0-4fd2-b63e-4be7f51c0b5e",
+    "name": "Untitled",
+    "commands": []
+  }, {
+    "id": "c99c53e8-dd98-49d9-a596-28af1d3b031a",
+    "name": "add_bus_line",
+    "commands": [{
+      "id": "fcdba3ba-96b2-4988-83b5-2e412d13cf52",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81f65301-c25e-41ce-aff0-c6e547abe863",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1421x807",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "57d6b2a3-940f-4dc7-862a-5b1627c41442",
+      "comment": "",
+      "command": "click",
+      "target": "id=peopleListLink",
+      "targets": [
+        ["id=peopleListLink", "id"],
+        ["linkText=Клиенты", "linkText"],
+        ["css=#peopleListLink", "css:finder"],
+        ["xpath=//a[contains(text(),'Клиенты')]", "xpath:link"],
+        ["xpath=//a[@id='peopleListLink']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'persons')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Клиенты')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0128a827-34f5-460c-94ef-3ad7c9474585",
+      "comment": "",
+      "command": "click",
+      "target": "id=placesListLink",
+      "targets": [
+        ["id=placesListLink", "id"],
+        ["linkText=Рейсы", "linkText"],
+        ["css=#placesListLink", "css:finder"],
+        ["xpath=//a[contains(text(),'Рейсы')]", "xpath:link"],
+        ["xpath=//a[@id='placesListLink']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'bus_lines')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Рейсы')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f4dacc7-d852-431e-9255-451c843c5f16",
+      "comment": "",
+      "command": "click",
+      "target": "id=addBuslineButton",
+      "targets": [
+        ["id=addBuslineButton", "id"],
+        ["css=#addBuslineButton", "css:finder"],
+        ["xpath=//button[@id='addBuslineButton']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Добавить рейс')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1a7c4ea3-e52c-4bc4-938a-6961717da35c",
+      "comment": "",
+      "command": "assertTitle",
+      "target": "Редактирование информации о рейсе",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b9de22c0-b69a-4e76-b325-381c196a52ec",
+      "comment": "",
+      "command": "click",
+      "target": "id=company",
+      "targets": [
+        ["id=company", "id"],
+        ["name=company", "name"],
+        ["css=#company", "css:finder"],
+        ["xpath=//input[@id='company']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c65087eb-33b8-4149-b774-c8b88e7bdab2",
+      "comment": "",
+      "command": "type",
+      "target": "id=company",
+      "targets": [
+        ["id=company", "id"],
+        ["name=company", "name"],
+        ["css=#company", "css:finder"],
+        ["xpath=//input[@id='company']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "ASDf"
+    }, {
+      "id": "f001d572-2e9c-418d-9f9b-dbeeebe725c2",
+      "comment": "",
+      "command": "click",
+      "target": "id=places",
+      "targets": [
+        ["id=places", "id"],
+        ["name=places", "name"],
+        ["css=#places", "css:finder"],
+        ["xpath=//input[@id='places']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e743c0b-5270-4e92-a687-a1e31765a2b2",
+      "comment": "",
+      "command": "type",
+      "target": "id=places",
+      "targets": [
+        ["id=places", "id"],
+        ["name=places", "name"],
+        ["css=#places", "css:finder"],
+        ["xpath=//input[@id='places']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "34"
+    }, {
+      "id": "0bc4f5f6-5c6b-4d5d-8503-6a44262c04a7",
+      "comment": "",
+      "command": "click",
+      "target": "id=submitButton",
+      "targets": [
+        ["id=submitButton", "id"],
+        ["css=#submitButton", "css:finder"],
+        ["xpath=//input[@id='submitButton']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b099ecd-e5f4-4740-91d3-7f407468d8b8",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) #BusLineInfoButton",
+      "targets": [
+        ["css=tr:nth-child(6) #BusLineInfoButton", "css:finder"],
+        ["xpath=(//button[@id='BusLineInfoButton'])[6]", "xpath:attributes"],
+        ["xpath=//tr[6]/td[5]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c6e5a11-517c-4a93-82fb-207b074cb5d5",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(3)",
+      "targets": [
+        ["css=p:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Компания: ASDf')]", "xpath:innerText"]
+      ],
+      "value": "Компания: ASDf"
+    }, {
+      "id": "2d1969b3-6298-4cb5-8f8d-e962c06fe730",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(4)",
+      "targets": [
+        ["css=p:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/p[3]", "xpath:idRelative"],
+        ["xpath=//p[3]", "xpath:position"],
+        ["xpath=//p[contains(.,'Количество мест: 34')]", "xpath:innerText"]
+      ],
+      "value": "Количество мест: 34"
+    }]
+  }, {
+    "id": "7d5de867-3960-44c4-bcbd-83f8f2670753",
+    "name": "delete_bus_line",
+    "commands": [{
+      "id": "5018a96b-d464-4ffd-99df-7a03ec2dd635",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd28a94e-30f7-475c-90e8-555c7f0229c4",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1421x807",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f711c29b-2204-407c-8bb0-ad174bf15f24",
+      "comment": "",
+      "command": "click",
+      "target": "id=placesListLink",
+      "targets": [
+        ["id=placesListLink", "id"],
+        ["linkText=Рейсы", "linkText"],
+        ["css=#placesListLink", "css:finder"],
+        ["xpath=//a[contains(text(),'Рейсы')]", "xpath:link"],
+        ["xpath=//a[@id='placesListLink']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'bus_lines')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Рейсы')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c29fe4d-8a9f-4bf4-a658-c3150245e5c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) #BusLineInfoButton",
+      "targets": [
+        ["css=tr:nth-child(6) #BusLineInfoButton", "css:finder"],
+        ["xpath=(//button[@id='BusLineInfoButton'])[6]", "xpath:attributes"],
+        ["xpath=//tr[6]/td[5]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10f6c369-4a9b-43da-8461-457291c82403",
+      "comment": "",
+      "command": "click",
+      "target": "id=deleteButton",
+      "targets": [
+        ["id=deleteButton", "id"],
+        ["css=#deleteButton", "css:finder"],
+        ["xpath=//button[@id='deleteButton']", "xpath:attributes"],
+        ["xpath=//div[2]/div/form[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Удалить рейс из базы')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c95e074b-9f22-45ef-ad80-3884437e60ce",
+      "comment": "",
+      "command": "click",
+      "target": "name=id",
+      "targets": [
+        ["name=id", "name"],
+        ["css=.col:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='id']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be3ddedd-c21c-4a61-ab6b-1204c92b41b9",
+      "comment": "",
+      "command": "type",
+      "target": "name=id",
+      "targets": [
+        ["name=id", "name"],
+        ["css=.col:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='id']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "6"
+    }, {
+      "id": "2c784ca7-135f-4e37-956d-3ef02cd15ac5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .btn",
+      "targets": [
+        ["css=.col > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0550c28c-c74f-4fca-b40e-56d64264f499",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.indent:nth-child(4)",
+      "targets": [
+        ["css=.indent:nth-child(4)", "css:finder"],
+        ["xpath=//div[3]", "xpath:position"]
+      ],
+      "value": "Ошибка!\\nВ базе нет рейса с ID = 6"
+    }]
+  }, {
+    "id": "0fbde19e-74d8-4f4a-a47f-efdedd7e8039",
+    "name": "add station",
+    "commands": [{
+      "id": "f15737fa-51a9-478c-b7bc-2f02c55a9053",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6dcd5339-a858-4eef-897e-3a7f5e046ca9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1421x807",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7ed7a761-1997-4811-a2d3-7d5f04f5a5f5",
+      "comment": "",
+      "command": "click",
+      "target": "id=placesListLink",
+      "targets": [
+        ["id=placesListLink", "id"],
+        ["linkText=Рейсы", "linkText"],
+        ["css=#placesListLink", "css:finder"],
+        ["xpath=//a[contains(text(),'Рейсы')]", "xpath:link"],
+        ["xpath=//a[@id='placesListLink']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'bus_lines')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Рейсы')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "649bf29b-51fa-42b4-9bbc-16b95709a366",
+      "comment": "",
+      "command": "click",
+      "target": "id=BusLineInfoButton",
+      "targets": [
+        ["id=BusLineInfoButton", "id"],
+        ["css=tr:nth-child(1) #BusLineInfoButton", "css:finder"],
+        ["xpath=//button[@id='BusLineInfoButton']", "xpath:attributes"],
+        ["xpath=//td[5]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Инфо')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2979f17d-7f4f-4710-be2a-768af253cdca",
+      "comment": "",
+      "command": "click",
+      "target": "id=addStationButton",
+      "targets": [
+        ["id=addStationButton", "id"],
+        ["css=#addStationButton", "css:finder"],
+        ["xpath=//button[@id='addStationButton']", "xpath:attributes"],
+        ["xpath=//div[@id='BusLineInfo']/div/div/form/button", "xpath:idRelative"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Добавить станцию в этом рейсе')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc15af74-2498-4e67-a6b7-dc2d5c121ae7",
+      "comment": "",
+      "command": "click",
+      "target": "id=station",
+      "targets": [
+        ["id=station", "id"],
+        ["name=station", "name"],
+        ["css=#station", "css:finder"],
+        ["xpath=//input[@id='station']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5c213af2-8993-421b-9ae1-6caef1e722d9",
+      "comment": "",
+      "command": "type",
+      "target": "id=station",
+      "targets": [
+        ["id=station", "id"],
+        ["name=station", "name"],
+        ["css=#station", "css:finder"],
+        ["xpath=//input[@id='station']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "Asak"
+    }, {
+      "id": "10a5959f-3923-4724-8243-bf843e2ddbb9",
+      "comment": "",
+      "command": "click",
+      "target": "id=time_in",
+      "targets": [
+        ["id=time_in", "id"],
+        ["name=time_in", "name"],
+        ["css=#time_in", "css:finder"],
+        ["xpath=//input[@id='time_in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e14e723f-00a7-4b89-85d6-665301d20a95",
+      "comment": "",
+      "command": "type",
+      "target": "id=time_in",
+      "targets": [
+        ["id=time_in", "id"],
+        ["name=time_in", "name"],
+        ["css=#time_in", "css:finder"],
+        ["xpath=//input[@id='time_in']", "xpath:attributes"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "11:12"
+    }, {
+      "id": "c943de69-d817-4805-aa79-c6b0d637a36b",
+      "comment": "",
+      "command": "click",
+      "target": "id=time_out",
+      "targets": [
+        ["id=time_out", "id"],
+        ["name=time_out", "name"],
+        ["css=#time_out", "css:finder"],
+        ["xpath=//input[@id='time_out']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c82c8fa9-13ac-4d28-ac65-88ab54975092",
+      "comment": "",
+      "command": "type",
+      "target": "id=time_out",
+      "targets": [
+        ["id=time_out", "id"],
+        ["name=time_out", "name"],
+        ["css=#time_out", "css:finder"],
+        ["xpath=//input[@id='time_out']", "xpath:attributes"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": "11:23"
+    }, {
+      "id": "e8cef275-7a33-43f9-950d-35249221adb0",
+      "comment": "",
+      "command": "click",
+      "target": "id=day",
+      "targets": [
+        ["id=day", "id"],
+        ["name=day", "name"],
+        ["css=#day", "css:finder"],
+        ["xpath=//input[@id='day']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3fe1e09a-66fc-4e77-9ab8-8ea5d9452b0b",
+      "comment": "",
+      "command": "type",
+      "target": "id=day",
+      "targets": [
+        ["id=day", "id"],
+        ["name=day", "name"],
+        ["css=#day", "css:finder"],
+        ["xpath=//input[@id='day']", "xpath:attributes"],
+        ["xpath=//input[5]", "xpath:position"]
+      ],
+      "value": "1"
+    }, {
+      "id": "4ce1e3c2-ab0f-4d47-b093-890747283884",
+      "comment": "",
+      "command": "click",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["name=type", "name"],
+        ["css=#type", "css:finder"],
+        ["xpath=//input[@id='type']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "febfaa03-aeb3-4c45-94cd-321378c3d8d0",
+      "comment": "",
+      "command": "type",
+      "target": "id=type",
+      "targets": [
+        ["id=type", "id"],
+        ["name=type", "name"],
+        ["css=#type", "css:finder"],
+        ["xpath=//input[@id='type']", "xpath:attributes"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": "3"
+    }, {
+      "id": "632a4fe0-761b-469e-973e-6891fe6ddc29",
+      "comment": "",
+      "command": "click",
+      "target": "id=submitButton",
+      "targets": [
+        ["id=submitButton", "id"],
+        ["css=#submitButton", "css:finder"],
+        ["xpath=//input[@id='submitButton']", "xpath:attributes"],
+        ["xpath=//input[7]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "09d5bd23-3055-4072-8e41-02ccdc8909c1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr[3]/td[2]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'11:12:00')]", "xpath:innerText"]
+      ],
+      "value": "11:12:00\t"
+    }, {
+      "id": "b4f8db78-def8-4bf0-a6e4-8d49890e2f4d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) > td:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr[3]/td", "xpath:idRelative"],
+        ["xpath=//tr[3]/td", "xpath:position"],
+        ["xpath=//td[contains(.,'Asak')]", "xpath:innerText"]
+      ],
+      "value": "Asak"
+    }, {
+      "id": "3b3c0f36-27da-424e-9f96-1222b2cfe4a9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) > td:nth-child(3) > span",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(3) > span", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr[3]/td[3]/span", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'11:23:00')]", "xpath:innerText"]
+      ],
+      "value": "11:23:00\t"
+    }, {
+      "id": "01b2c7ca-7285-4ba2-a7b1-02eca67fe6ee",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(3) > td:nth-child(4)",
+      "targets": [
+        ["css=tr:nth-child(3) > td:nth-child(4)", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr[3]/td[4]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[4]", "xpath:position"]
+      ],
+      "value": "1"
+    }]
+  }, {
+    "id": "e0027d69-5bf5-4334-ab76-458d5ae07d36",
+    "name": "delete_station",
+    "commands": [{
+      "id": "ada5bf8d-3628-4b8a-bf8f-0983892f0183",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f211730f-3946-4589-8d41-207894b95b85",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1421x807",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ec44790-6150-4539-9308-d6922a002ddd",
+      "comment": "",
+      "command": "click",
+      "target": "id=placesListLink",
+      "targets": [
+        ["id=placesListLink", "id"],
+        ["linkText=Рейсы", "linkText"],
+        ["css=#placesListLink", "css:finder"],
+        ["xpath=//a[contains(text(),'Рейсы')]", "xpath:link"],
+        ["xpath=//a[@id='placesListLink']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'bus_lines')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Рейсы')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9ffb81f-293f-40d3-84f7-38c394fbf36d",
+      "comment": "",
+      "command": "click",
+      "target": "id=BusLineInfoButton",
+      "targets": [
+        ["id=BusLineInfoButton", "id"],
+        ["css=tr:nth-child(1) #BusLineInfoButton", "css:finder"],
+        ["xpath=//button[@id='BusLineInfoButton']", "xpath:attributes"],
+        ["xpath=//td[5]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Инфо')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bba764c3-4ffc-46ed-bda6-7423ae59779d",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(3) #deleteButtonStation",
+      "targets": [
+        ["css=tr:nth-child(3) #deleteButtonStation", "css:finder"],
+        ["xpath=(//button[@id='deleteButtonStation'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr[3]/td[5]/form/button", "xpath:idRelative"],
+        ["xpath=//tr[3]/td[5]/form/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6042d056-0808-44a3-b90d-ae13af27041d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(2) > td:nth-child(1) > span",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr[2]/td/span", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Serpuhov')]", "xpath:innerText"]
+      ],
+      "value": "Serpuhov"
+    }]
+  }, {
+    "id": "2149513d-4f4f-444f-bf72-4957ebf7fd70",
+    "name": "search_bus_line_byid",
+    "commands": [{
+      "id": "a8b96a87-da8b-4a39-8835-dfe7f92df3ed",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5b8b6b63-6669-4049-8bdb-60889bd5cae7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1421x807",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "57d3f0b4-f082-42ac-9e7c-4ad80ad18b2d",
+      "comment": "",
+      "command": "click",
+      "target": "id=placesListLink",
+      "targets": [
+        ["id=placesListLink", "id"],
+        ["linkText=Рейсы", "linkText"],
+        ["css=#placesListLink", "css:finder"],
+        ["xpath=//a[contains(text(),'Рейсы')]", "xpath:link"],
+        ["xpath=//a[@id='placesListLink']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'bus_lines')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Рейсы')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0fc241fc-86f5-4f0c-ab72-ce1874d53057",
+      "comment": "",
+      "command": "click",
+      "target": "name=id",
+      "targets": [
+        ["name=id", "name"],
+        ["css=.col:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='id']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "39d44bcc-da2c-4d2a-a0e7-017c6d8d418c",
+      "comment": "",
+      "command": "type",
+      "target": "name=id",
+      "targets": [
+        ["name=id", "name"],
+        ["css=.col:nth-child(1) > .form-control", "css:finder"],
+        ["xpath=//input[@name='id']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "2"
+    }, {
+      "id": "0f058591-1f62-42a4-b1b5-94d0b05d0cc6",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .btn",
+      "targets": [
+        ["css=.col > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ca6b8c3-8e12-4033-a023-c73a1bad965e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(2)",
+      "targets": [
+        ["css=p:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/p", "xpath:idRelative"],
+        ["xpath=//div[5]/div/p", "xpath:position"]
+      ],
+      "value": "Номер рейса: 2"
+    }, {
+      "id": "cd353718-e8fe-4774-84ee-c9695bfd2b0d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=p:nth-child(3)",
+      "targets": [
+        ["css=p:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Компания: Roman_tower')]", "xpath:innerText"]
+      ],
+      "value": "Компания: Roman_tower"
+    }, {
+      "id": "b84128ab-119a-45f3-ad32-b24a1407e40d",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=h3",
+      "targets": [
+        ["css=h3", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Подробная информация о рейсе')]", "xpath:innerText"]
+      ],
+      "value": "Подробная информация о рейсе"
+    }]
+  }, {
+    "id": "45da9717-20ca-4b08-984f-5e9083cf88d0",
+    "name": "search_bus_line",
+    "commands": [{
+      "id": "1a9ce33c-9a5a-4c0e-b788-98c86865c2c1",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e88f3130-5a0d-4268-963d-b20eaf33238b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1421x807",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9456a463-9643-43b9-9243-abd9f6540415",
+      "comment": "",
+      "command": "click",
+      "target": "id=placesListLink",
+      "targets": [
+        ["id=placesListLink", "id"],
+        ["linkText=Рейсы", "linkText"],
+        ["css=#placesListLink", "css:finder"],
+        ["xpath=//a[contains(text(),'Рейсы')]", "xpath:link"],
+        ["xpath=//a[@id='placesListLink']", "xpath:attributes"],
+        ["xpath=//div[@id='navbarSupportedContent']/ul/li[3]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'bus_lines')]", "xpath:href"],
+        ["xpath=//li[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Рейсы')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a59e5562-848a-45f4-a390-89293dcdc35e",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td:nth-child(3) > span",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(3) > span", "css:finder"],
+        ["xpath=//tr[2]/td[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Salarievo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1224071-0a65-40fc-a7cc-8eaf07abcf00",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) > td:nth-child(3) > span",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(3) > span", "css:finder"],
+        ["xpath=//tr[2]/td[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Salarievo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7ee2cb7-90ee-47c8-b890-9c70ba922f1c",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=tr:nth-child(2) > td:nth-child(3) > span",
+      "targets": [
+        ["css=tr:nth-child(2) > td:nth-child(3) > span", "css:finder"],
+        ["xpath=//tr[2]/td[3]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Salarievo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0ff439aa-86f5-4153-999c-49056d04883e",
+      "comment": "",
+      "command": "click",
+      "target": "name=from",
+      "targets": [
+        ["name=from", "name"],
+        ["css=.col:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='from']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9ba704a-822a-4b0d-bf33-f0dc5c0d5b96",
+      "comment": "",
+      "command": "type",
+      "target": "name=from",
+      "targets": [
+        ["name=from", "name"],
+        ["css=.col:nth-child(2) > .form-control", "css:finder"],
+        ["xpath=//input[@name='from']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Salarievo"
+    }, {
+      "id": "964a3ad8-1c2c-4909-a7e0-cf1f974e222b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col > .btn",
+      "targets": [
+        ["css=.col > .btn", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Search')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "75f5fee0-477a-4073-9d9a-cb5ae318679c",
+      "comment": "",
+      "command": "click",
+      "target": "id=BusLineInfoButton",
+      "targets": [
+        ["id=BusLineInfoButton", "id"],
+        ["css=#BusLineInfoButton", "css:finder"],
+        ["xpath=//button[@id='BusLineInfoButton']", "xpath:attributes"],
+        ["xpath=//td[5]/form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Инфо')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3bf023eb-de58-4746-8ec7-9da2c0a0aa61",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > span",
+      "targets": [
+        ["css=td:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr/td/span", "xpath:idRelative"],
+        ["xpath=//td/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Salarievo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4f19a651-9f5d-46ca-9857-5a361598a5db",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > span",
+      "targets": [
+        ["css=td:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr/td/span", "xpath:idRelative"],
+        ["xpath=//td/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Salarievo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a421c78c-3ebc-42db-9d6b-36cf1286ef61",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=td:nth-child(1) > span",
+      "targets": [
+        ["css=td:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr/td/span", "xpath:idRelative"],
+        ["xpath=//td/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Salarievo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b60f718-1596-443d-ad40-bda140d3213e",
+      "comment": "",
+      "command": "click",
+      "target": "css=td:nth-child(1) > span",
+      "targets": [
+        ["css=td:nth-child(1) > span", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr/td/span", "xpath:idRelative"],
+        ["xpath=//td/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Salarievo')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a727eacc-f3d4-4b34-b922-e168b5237ffd",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=td:nth-child(1)",
+      "targets": [
+        ["css=td:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='BusLineInfo']/table/tbody/tr/td", "xpath:idRelative"],
+        ["xpath=//td", "xpath:position"],
+        ["xpath=//td[contains(.,'Salarievo')]", "xpath:innerText"]
+      ],
+      "value": "Salarievo\t"
+    }]
+  }, {
+    "id": "1d3af154-63b6-4d6b-bca1-dae17d7b3016",
+    "name": "edit_bus_line",
+    "commands": [{
+      "id": "ea5517f8-77c4-4a5c-bfe4-3052f8578074",
+      "comment": "",
+      "command": "",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "67af7e5e-436c-4489-9696-6c8d6b870b1f",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["deaa45ba-74b0-4fd2-b63e-4be7f51c0b5e"]
+  }],
+  "urls": ["http://localhost:8080/"],
+  "plugins": []
+}
